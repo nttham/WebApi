@@ -1,0 +1,30 @@
+{
+  "name": "OAuth-Authentication-Service",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "postinstall": "bash postinstall.sh"
+  },
+  "dependencies": {
+    "express": "~3.3.4",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.0.0",
+    "passport-google-oauth2": "^0.1.6",
+    "passport-linkedin-oauth2": "1.4.1",
+    "passport-twitter": "^1.0.3",
+    "qs": "6.2.0",
+    "randomstring": "1.1.5",
+    "twilio": "^2.9.1",
+    "body-parser":"1.0.2",
+    "sendgrid":"2.0.0",
+    "jsonwebtoken":"*",
+    "async": "2.0.1",
+    "cors": "2.7.1",
+    "enum":"2.3.0",
+    "request": "^2.72.0",
+    "ldapjs": "1.0.0",
+    "passport-oauth2":"1.3.0",
+    "underscore":"*",
+    "is-my-json-valid":"*"
+  }
+}

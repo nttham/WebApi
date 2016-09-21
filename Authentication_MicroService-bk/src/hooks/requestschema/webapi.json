@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "method": {
+      "type": "string"
+    },
+    "headers": {
+      "type": "object",
+      "properties": {
+        "Accept": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Accept"
+      ]
+    },
+    "path": {
+      "type": "array",
+      "items": {}
+    },
+    "qs": {
+      "type": "array",
+      "items": {}
+    },
+    "body": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "required": [
+    "method",
+
+    "path"
+
+
+  ]
+}

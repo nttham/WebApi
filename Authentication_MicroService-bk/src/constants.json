@@ -1,0 +1,6 @@
+{
+  "expiresIn" : 900,
+  "sessionMaxAge" : 1800000,
+  "generate":"generate",
+  "validate":"validate"
+}

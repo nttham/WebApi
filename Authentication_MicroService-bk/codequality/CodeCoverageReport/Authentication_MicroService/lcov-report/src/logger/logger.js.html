@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/logger/logger.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/logger/</a> logger.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>45/105</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25.58% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>11/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>45/105</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Created by Suryakala on 24/05/16.
+ */
+&nbsp;
+//var express = require('express');
+//var app = express();
+var mongolog = require('./connectors/mongoconnector');
+var graylogobj = require('./connectors/graylogconnector');
+var self;
+&nbsp;
+//constructor
+var logger = function () {
+&nbsp;
+};
+&nbsp;
+&nbsp;
+var bodyParser = require('body-parser')
+&nbsp;
+&nbsp;
+function initLogger(appName, userName, logStore){
+    init(appName, userName, logStore);
+}
+&nbsp;
+function init(appName, userName, logStore){
+switch(logStore){
+<span class="branch-0 cbranch-no" title="branch not covered" >    case 'mongoDB':</span>
+<span class="cstat-no" title="statement not covered" >        logToMongoDB(appName);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    case 'graylog':
+        logToGraylog();
+        break;
+<span class="branch-2 cbranch-no" title="branch not covered" >    case 'splunk':</span>
+<span class="cstat-no" title="statement not covered" >        logToSplunk();</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="branch-3 cbranch-no" title="branch not covered" >    case 'default':</span>
+<span class="cstat-no" title="statement not covered" >        logToMongoDB();</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+}
+}
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >function logToMongoDB(appname) {</span>
+<span class="cstat-no" title="statement not covered" >    var priority;</span>
+<span class="cstat-no" title="statement not covered" >    var type;</span>
+<span class="cstat-no" title="statement not covered" >    mongolog = mongolog.log(appname);</span>
+<span class="cstat-no" title="statement not covered" >    self = {</span>
+        log: <span class="fstat-no" title="function not covered" >function (level, message) {</span>
+<span class="cstat-no" title="statement not covered" >            priority = 'normal';</span>
+<span class="cstat-no" title="statement not covered" >            type = level;</span>
+<span class="cstat-no" title="statement not covered" >            new mongolog({datetime: Date(), priority: priority, logtype: type, msg: message}).save();</span>
+        },
+        info: <span class="fstat-no" title="function not covered" >function (message, extra) {</span>
+<span class="cstat-no" title="statement not covered" >            var priority = 'normal';</span>
+<span class="cstat-no" title="statement not covered" >            var type = 'information';</span>
+<span class="cstat-no" title="statement not covered" >            new mongolog({datetime: Date(), priority: priority, logtype: type, msg: message, extra: extra}).save(<span class="fstat-no" title="function not covered" >function(err){</span></span>
+<span class="cstat-no" title="statement not covered" >                if(err) {</span>
+<span class="cstat-no" title="statement not covered" >                    console.log('error: ' + err);</span>
+                }
+                else{
+<span class="cstat-no" title="statement not covered" >                    console.log("Log saved on " + Date());</span>
+                }
+            });
+        },
+        debug: <span class="fstat-no" title="function not covered" >function (message) {</span>
+<span class="cstat-no" title="statement not covered" >            var priority = 'normal';</span>
+<span class="cstat-no" title="statement not covered" >            var type = 'debug';</span>
+<span class="cstat-no" title="statement not covered" >            new mongolog({datetime: Date(), priority: priority, logtype: type, msg: message}).save(<span class="fstat-no" title="function not covered" >function(err){</span></span>
+<span class="cstat-no" title="statement not covered" >                if(err) {</span>
+<span class="cstat-no" title="statement not covered" >                    console.log('error: ' + err);</span>
+                }
+                else{
+<span class="cstat-no" title="statement not covered" >                    console.log("Log saved on " + Date());</span>
+                }
+            });
+        },
+        error: <span class="fstat-no" title="function not covered" >function (message) {</span>
+<span class="cstat-no" title="statement not covered" >            var priority = 'normal';</span>
+<span class="cstat-no" title="statement not covered" >            var type = 'error';</span>
+<span class="cstat-no" title="statement not covered" >            new mongolog({datetime: Date(), priority: priority, logtype: type, msg: message}).save(<span class="fstat-no" title="function not covered" >function(err){</span></span>
+<span class="cstat-no" title="statement not covered" >                if(err) {</span>
+<span class="cstat-no" title="statement not covered" >                    console.log('error: ' + err);</span>
+                }
+                else{
+<span class="cstat-no" title="statement not covered" >                    console.log("Log saved on " + Date());</span>
+                }
+            });
+        }
+&nbsp;
+    };
+}
+&nbsp;
+&nbsp;
+function logToGraylog(){
+  var graylog = graylogobj.logger;
+    self = {
+        info: function (message, extra) {
+            console.log('*** INFO LOGGING');
+            graylog.info(message, extra, function(error, bytesSent){
+                <span class="missing-if-branch" title="if path not taken" >I</span>if(error){
+<span class="cstat-no" title="statement not covered" >                    console.log('*** Error Raised: '+error);</span>
+                }
+                else{
+                    console.log('Message sent to server  '+JSON.stringify(graylog));
+                    console.log('*** Total bytes successfully delivered to Graylog server: '+bytesSent);
+                }
+            });
+        },
+        debug: <span class="fstat-no" title="function not covered" >function (message, extra) {</span>
+<span class="cstat-no" title="statement not covered" >           graylog.debug(message,extra);</span>
+        },
+        warning: <span class="fstat-no" title="function not covered" >function (message, extra) {</span>
+<span class="cstat-no" title="statement not covered" >            graylog.warning(message,extra);</span>
+        },
+        error: <span class="fstat-no" title="function not covered" >function (errMsg, extra) {</span>
+<span class="cstat-no" title="statement not covered" >            graylog.error(new Error(errMsg), extra);</span>
+        },
+        emergency: <span class="fstat-no" title="function not covered" >function (message, extra) {</span>
+<span class="cstat-no" title="statement not covered" >            graylog.emergency(message, extra);</span>
+        },
+        critical: <span class="fstat-no" title="function not covered" >function (message, extra) {</span>
+<span class="cstat-no" title="statement not covered" >            graylog.critical(message, extra);</span>
+        },
+        alert:  <span class="fstat-no" title="function not covered" >function (message, extra) {</span>
+<span class="cstat-no" title="statement not covered" >            graylog.alert(message, extra);</span>
+        },
+        notice: <span class="fstat-no" title="function not covered" >function (message, extra) {</span>
+<span class="cstat-no" title="statement not covered" >            graylog.notice(message, extra);</span>
+        }
+&nbsp;
+    };
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function logToSplunk(){</span>
+  // Splunck implementation go here
+}
+&nbsp;
+module.exports = self;
+&nbsp;
+var createLogger = function(options){
+    <span class="missing-if-branch" title="else path not taken" >E</span>if(options.logStore === 'graylog') {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (self) {
+<span class="cstat-no" title="statement not covered" >            return graylogobj.logger;</span>
+        }
+        initLogger('apitestgraylog', 'admin', 'graylog');
+    }
+    else <span class="cstat-no" title="statement not covered" >if(options.logStore === 'mongoDB'){</span>
+<span class="cstat-no" title="statement not covered" >        if (self) {</span>
+<span class="cstat-no" title="statement not covered" >            return mongolog.log;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        initLogger('apitestmongo', 'surya', 'mongoDB');</span>
+    }
+}
+&nbsp;
+logger.prototype.postLog = function (app) {
+    app.use( bodyParser.json() );       // to support JSON-encoded bodies
+    app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+        extended: true
+    }));
+&nbsp;
+    app.post("/savelog", function (req, res) {
+        var options = {logStore: 'graylog'};
+        createLogger(options);
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!req.body.level || !req.body.message || !req.body.appid) {
+<span class="cstat-no" title="statement not covered" >            return res.send({"status": "error", "message": "missing a parameter"});</span>
+        } else {
+            console.log('\n\n*** started processing!');
+            var message = req.body.message;
+            var extra = {appid: req.body.appid};
+            var level = req.body.level.toUpperCase();
+            var response;
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (level === 'INFO' || <span class="branch-1 cbranch-no" title="branch not covered" >level === 'DEBUG' </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >level === 'WARNING' </span>|| <span class="branch-3 cbranch-no" title="branch not covered" >level === 'ERROR'</span>
+                || <span class="branch-4 cbranch-no" title="branch not covered" >level === 'EMERGENCY' </span>|| <span class="branch-5 cbranch-no" title="branch not covered" >level === 'ALERT' </span>|| <span class="branch-6 cbranch-no" title="branch not covered" >level === 'CRITICAL' </span>|| <span class="branch-7 cbranch-no" title="branch not covered" >level === 'NOTICE'</span>
+            ) {
+                switch (level) {
+                    case 'INFO':
+                        self.info(message, extra);
+                        break;
+<span class="branch-1 cbranch-no" title="branch not covered" >                    case 'DEBUG':</span>
+<span class="cstat-no" title="statement not covered" >                        self.debug(message, extra);</span>
+<span class="cstat-no" title="statement not covered" >                        break;</span>
+<span class="branch-2 cbranch-no" title="branch not covered" >                    case 'WARNING':</span>
+<span class="cstat-no" title="statement not covered" >                        self.warning(message, extra);</span>
+<span class="cstat-no" title="statement not covered" >                        break;</span>
+<span class="branch-3 cbranch-no" title="branch not covered" >                    case 'ERROR':</span>
+<span class="cstat-no" title="statement not covered" >                        self.error(message, extra);</span>
+<span class="cstat-no" title="statement not covered" >                        break;</span>
+<span class="branch-4 cbranch-no" title="branch not covered" >                    case 'EMERGENCY':</span>
+<span class="cstat-no" title="statement not covered" >                        self.emergency(message, extra);</span>
+<span class="cstat-no" title="statement not covered" >                        break;</span>
+<span class="branch-5 cbranch-no" title="branch not covered" >                    case 'ALERT':</span>
+<span class="cstat-no" title="statement not covered" >                        self.alert(message, extra);</span>
+<span class="cstat-no" title="statement not covered" >                        break;</span>
+<span class="branch-6 cbranch-no" title="branch not covered" >                    case 'CRITICAL':</span>
+<span class="cstat-no" title="statement not covered" >                        self.critical(message, extra);</span>
+<span class="cstat-no" title="statement not covered" >                        break;</span>
+<span class="branch-7 cbranch-no" title="branch not covered" >                    case 'NOTICE':</span>
+<span class="cstat-no" title="statement not covered" >                        self.notice(message, extra);</span>
+<span class="cstat-no" title="statement not covered" >                        break;</span>
+                }
+                response = {'status': 'Success', 'message': 'Successfully sent to Graylog server'};
+&nbsp;
+            }
+            else {
+<span class="cstat-no" title="statement not covered" >                response = {'status': 'failed', message: 'Invalid log level'};</span>
+&nbsp;
+            }
+            return res.send(response);
+&nbsp;
+&nbsp;
+        }
+    });
+}
+//
+//// =======================
+//// start the server ======
+//// =======================
+////var host = process.env.VCAP_APP_HOST || 'localhost';
+//var port = process.env.PORT || 3000;
+//var server = app.listen(port, function(){
+//    console.log('Server running at http://localhost:'+port);
+//});
+//
+//var closeServer = function(){
+//    server.close();
+//};
+//
+//exports.closeServer = closeServer;
+//
+//module.exports = app;
+module.exports = logger;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 17 2016 06:25:27 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

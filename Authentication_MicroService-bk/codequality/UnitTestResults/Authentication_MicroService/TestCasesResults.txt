@@ -1,0 +1,53 @@
+root@ip-10-175-142-138:/home/ubuntu/TestApp/OAuthApp# ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test/OAuthTest.js
+Running on port :3000
+
+
+  OTP Test Cases
+    Method POST
+- - - [Fri, 17 Jun 2016 06:25:31 GMT] "POST /generate HTTP/1.1" 200 95 "-" "node-superagent/2.0.0"
+      ✓ should be able to Generate OTP and send via sendgrid (325ms)
+    Method POST
+- - - [Fri, 17 Jun 2016 06:25:31 GMT] "POST /generate HTTP/1.1" 200 95 "-" "node-superagent/2.0.0"
+      ✓ should be able to Generate OTP and send via twilio
+    Method POST
+- - - [Fri, 17 Jun 2016 06:25:31 GMT] "POST /validate HTTP/1.1" 200 42 "-" "node-superagent/2.0.0"
+      ✓ should be able to validate OTP
+    Logger Test Cases
+
+
+*** started processing!
+*** INFO LOGGING
+- - - [Fri, 17 Jun 2016 06:25:31 GMT] "POST /savelog HTTP/1.1" 200 77 "-" "node-superagent/2.0.0"
+undefined
+Successfully sent to Graylog server
+      ✓ should be able to POST logs to Graylog server
+Message sent to server  {"config":{"fields":{"facility":"logger-service","owner":"CognizantOne"},"filter":[],"broadcast":[],"adapterName":"udp","adapterOptions":{"protocol":"udp4","host":"54.208.196.90","port":"12201"},"levels":{"emergency":0,"alert":1,"critical":2,"error":3,"warning":4,"notice":5,"info":6,"debug":7}}}
+*** Total bytes successfully delivered to Graylog server: 171
+
+  check whether sendgridservice is present or not
+    ✓ should exist
+
+  check Email Functionality
+    ✓ should exist
+
+  check whether sendgridservice is present or not
+    ✓ should exist
+
+  check Email Functionality
+    ✓ should exist (1634ms)
+
+
+  8 passing (3s)
+
+=============================================================================
+Writing coverage object [/home/ubuntu/TestApp/OAuthApp/coverage/coverage.json]
+Writing coverage reports at [/home/ubuntu/TestApp/OAuthApp/coverage]
+=============================================================================
+
+=============================== Coverage summary ===============================
+Statements   : 63.1% ( 277/439 )
+Branches     : 30.34% ( 44/145 )
+Functions    : 56.67% ( 51/90 )
+Lines        : 63.24% ( 277/438 )
+================================================================================
+root@ip-10-175-142-138:/home/ubuntu/TestApp/OAuthApp#

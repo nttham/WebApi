@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/hooks/otp.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/hooks/</a> otp.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.14% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>47/70</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">55.26% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>21/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85.71% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.14% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>47/70</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Created by 423919 on 5/18/2016.
+ * This is the Otp module which generate a token and validate the same
+ */
+// dependencies for this module
+var crypto = require('crypto');
+var cipherPwd = 'oyeilyodd';
+var encryptionType = 'aes192';
+var randomString = require("randomstring");
+var bodyParser = require('body-parser');
+var jsonParser = bodyParser.json();
+//constructor
+var Otp = function () {
+&nbsp;
+};
+&nbsp;
+&nbsp;
+// This api is use to generate an OTP based on the length,type and expiry
+// time
+&nbsp;
+Otp.prototype.generateOtp = function (app) {
+    // route for generate Otp
+    app.post("/generate", jsonParser, function (req, res) {
+&nbsp;
+        var otpOptions = {};
+        //creating the otpOptions from the req.body.json
+        otpOptions.length = (req.body.otp &amp;&amp; req.body.otp.otpLength) ? req.body.otp.otpLength : <span class="branch-1 cbranch-no" title="branch not covered" >4;</span>
+        otpOptions.charset = (req.body.otp &amp;&amp; req.body.otp.otpType) ? req.body.otp.otpType : <span class="branch-1 cbranch-no" title="branch not covered" >'numeric';</span>
+        var expiryTime = (req.body.otp &amp;&amp; req.body.otp.otpExpiryTime) ? req.body.otp.otpExpiryTime : <span class="branch-1 cbranch-no" title="branch not covered" >10;</span>
+        var otpCode = randomString.generate(otpOptions);
+       
+        //otpGenTime will have current time in milliseconds
+        var otpGenTime = Date.now();
+        //generating the expiry time in milliseconds
+        var otpExpiryTime = otpGenTime + (expiryTime * 60000);
+        //generating the secret data for the key which is a combination
+        // of otpcode and expiry time in the format ("otpCode-otpExpiryTime")
+        var secretData = otpCode + '-' + otpExpiryTime;
+&nbsp;
+        // encrypting the secretData with the cipherPwd
+        var cipher = crypto.createCipher(encryptionType, cipherPwd);
+        var encrypted = cipher.update(secretData, 'utf8', 'hex');
+        encrypted += cipher.final('hex');
+&nbsp;
+        // checking the channel in req.body.json 
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (req.body.channel === 'twilio') {
+<span class="cstat-no" title="statement not covered" >            if(req.body.twilio &amp;&amp; req.body.twilio.accountSID &amp;&amp; req.body.twilio.authToken &amp;&amp; req.body.twilio.toRecipient &amp;&amp; req.body.twilio.fromNo){</span>
+                //hooking the twilio to OTP
+<span class="cstat-no" title="statement not covered" >                var twilio = require("./twilioservice.js");</span>
+<span class="cstat-no" title="statement not covered" >                var twilioObj = new twilio();</span>
+                //creating the options for twilio
+<span class="cstat-no" title="statement not covered" >                var msgObj = {</span>
+                    "accountSID": req.body.twilio.accountSID,
+                    "authToken": req.body.twilio.authToken,
+                    "to": req.body.twilio.toRecipient,
+                    "from": req.body.twilio.fromNo,
+                    "body": "OTP pin is " + otpCode
+&nbsp;
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                twilioObj.sendMessage(msgObj, <span class="fstat-no" title="function not covered" >function (err, result) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    res.header("Access-Control-Allow-Origin", "*");</span>
+<span class="cstat-no" title="statement not covered" >                    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");</span>
+<span class="cstat-no" title="statement not covered" >                    if (err) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        res.send(JSON.stringify(err), 400);</span>
+                    }
+                    else {
+<span class="cstat-no" title="statement not covered" >                        var resObj = {</span>
+                            otpCode: otpCode,
+                            otpKey: encrypted
+                        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        res.send(JSON.stringify(resObj), 200);</span>
+&nbsp;
+                    }
+&nbsp;
+                });
+            }
+            else {
+<span class="cstat-no" title="statement not covered" >                res.header("Access-Control-Allow-Origin", "*");</span>
+<span class="cstat-no" title="statement not covered" >                res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");</span>
+<span class="cstat-no" title="statement not covered" >                res.send("Invalid body parameters for twilio", 400);</span>
+            }
+&nbsp;
+        }
+        else <span class="missing-if-branch" title="else path not taken" >E</span>if (req.body.channel === 'sendgrid') {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if(req.body.sendgrid &amp;&amp; req.body.sendgrid.accountSID &amp;&amp; req.body.sendgrid.authToken &amp;&amp; req.body.sendgrid.toRecipient &amp;&amp; req.body.sendgrid.fromMail){
+                //hooking the sendgrid to OTP
+                var sendmail = require("./sendgridservice.js");
+                var sendmailObj = new sendmail();
+                //creating the options for sendgrid
+                var msgObj = {
+                    "accountSID": req.body.sendgrid.accountSID,
+                    "authToken": req.body.sendgrid.authToken,
+                    "toRecipient": req.body.sendgrid.toRecipient,
+                    "fromMail": req.body.sendgrid.fromMail,
+                    "subject": "Please find the otp",
+                    "text": "OTP pin is " + otpCode
+                };
+                sendmailObj.sendMail(msgObj, function (err, result) {
+                    res.header("Access-Control-Allow-Origin", "*");
+                    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (err) {
+<span class="cstat-no" title="statement not covered" >                        res.send(JSON.stringify(err), 400);</span>
+                    }
+                    else {
+                        var resObj = {
+                            otpCode: otpCode,
+                            otpKey: encrypted
+                        };
+                        res.send(JSON.stringify(resObj), 200);
+                    }
+                });
+            }
+            else {
+<span class="cstat-no" title="statement not covered" >                res.header("Access-Control-Allow-Origin", "*");</span>
+<span class="cstat-no" title="statement not covered" >                res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");</span>
+<span class="cstat-no" title="statement not covered" >                res.send("Invalid body parameters for sendgrid", 400);</span>
+            }
+        }
+        else {
+<span class="cstat-no" title="statement not covered" >            res.header("Access-Control-Allow-Origin", "*");</span>
+<span class="cstat-no" title="statement not covered" >            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");</span>
+<span class="cstat-no" title="statement not covered" >            res.send("Invalid body parameters", 400);</span>
+        }
+    });
+};
+&nbsp;
+// This api is used to validate the otp given by the user,
+// with the key
+Otp.prototype.validateOtp = function (app) {
+&nbsp;
+    app.post("/validate", jsonParser, function (req, res) {
+        //creating the Decipher with the cipherPwd
+        var decipher = crypto.createDecipher(encryptionType, cipherPwd);
+        // gets the otp key 
+        var encrypted = req.body.otpKey;
+        // decrypting the key to get the OTP and expiry time which comes in "OTP-EXPIRYTIME" format
+        var decrypted = decipher.update(encrypted, 'hex', 'utf8');
+        decrypted += decipher.final('utf8');
+        // spliting the "OTP-EXPIRYTIME" format decrrypt data to get otp and expiry time
+        var splitedSecretData = decrypted.split('-');
+        var status = {};
+        var currentTime = Date.now();
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (req.body.otpCode === splitedSecretData[0] &amp;&amp; splitedSecretData[1] &gt; currentTime) {
+            status.status = "OTP is validated successfully";
+            res.send(JSON.stringify(status), 200);
+        } else {
+<span class="cstat-no" title="statement not covered" >            status.status = "OTP validation failed ";</span>
+<span class="cstat-no" title="statement not covered" >            res.send(JSON.stringify(status), 400);</span>
+        }
+       
+       
+&nbsp;
+&nbsp;
+    });
+};
+&nbsp;
+module.exports = Otp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 17 2016 06:25:27 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
